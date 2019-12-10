@@ -1,4 +1,4 @@
-<h3>{{title}}</h3>
+<h3>Parent({{title}})</h3>
 
 <p>NUMBER: {{ivalue}}</p>
 
@@ -14,6 +14,6 @@
 
 
 <p class="container">
-  <tx-child [ivalue]="ivalue" class="item"></tx-child>
-  <tx-child [ivalue]="ivalue" class="item"></tx-child>
+  <tx-child [ivalue]="ivalue" [message]="message" class="item"></tx-child>
+  <tx-child [ivalue]="ivalue"  [message]="message" class="item"></tx-child>
 </p>

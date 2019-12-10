@@ -33,6 +33,7 @@ export class GrandComponent implements OnInit {
 
   public changeObject() {
     this.message.value++;
+    this.message.msg = 'MS:' + new Date().getMilliseconds().toString();
   }
 
   public newObject() {
@@ -40,16 +41,19 @@ export class GrandComponent implements OnInit {
     this.message = new MessageModel();
     this.message.value = n;
     this.message.value++;
+    this.message.msg = 'MS:' + new Date().getMilliseconds().toString();
 
   }
 
   public sendMessage1() {
     this.message1.value++;
+    this.message1.msg = 'MS:' + new Date().getMilliseconds().toString();
     this.stream1$.next(this.message1);
   }
 
   public sendMessage2() {
     this.message2.value++;
+    this.message2.msg = 'MS:' + new Date().getMilliseconds().toString();
     this.stream2$.next(this.message2);
   }
 }
