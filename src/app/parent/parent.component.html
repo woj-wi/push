@@ -1,26 +1,19 @@
 <h3>{{title}}</h3>
-<div>
-<span>COUNTER:{{counter}}</span>, <button (click)="setCounter()">RESET</button>
-</div>
-<div>
-  <span>OBJECT:{{message | json }}</span>
-</div>
-<div>
-  <span>OBSERVABLE ASYNC:{{message$ | async  | json }}</span>
-</div>
 
-<div>
-  <span>OBSERVABLE SUBSCRIBED:{{subs | json }}</span>
-</div>
+<p>NUMBER: {{ivalue}}</p>
 
+<p>OBJECT:{{message | json }}</p>
 
-<div>NUMBER: {{ivalue}}</div>
+<p>OBSERVABLE ASYNC (stream 1):{{message1$ | async  | json }}</p>
+
+<p>OBSERVABLE SUBSCRIBED (stream 2):{{subs | json }}</p>
+
+<p>COUNTER:{{counter}},
+  <button (click)="setCounter()">RESET</button>
+</p>
 
 
-<div class="container">
-  <tx-child [ivalue]="ivalue"   class="item">
-  </tx-child>
-  <tx-child  [ivalue]="ivalue" class="item">
-  </tx-child>
-
-</div>
+<p class="container">
+  <tx-child [ivalue]="ivalue" class="item"></tx-child>
+  <tx-child [ivalue]="ivalue" class="item"></tx-child>
+</p>

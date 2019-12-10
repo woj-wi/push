@@ -17,12 +17,12 @@ export class ParentOnPushComponent implements OnInit {
   @Input()
   public message: MessageModel;
   @Input()
-  public message$: Observable<MessageModel>;
-
-  @Input()
   public message1$: Observable<MessageModel>;
 
-  public title = 'ONPUSH';
+  @Input()
+  public message2$: Observable<MessageModel>;
+
+  public title = 'CHANGE STRATEGY: ONPUSH';
   public counter = 0;
 
   public subs;
@@ -35,7 +35,7 @@ export class ParentOnPushComponent implements OnInit {
       this.counter++;
     }, 500);
 
-    this.message1$.subscribe((x) => this.subs = x);
+    this.message2$.subscribe((x) => this.subs = x);
   }
 
   public setCounter() {

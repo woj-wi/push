@@ -18,15 +18,15 @@ export class ParentDefaultComponent implements OnInit {
   public message: MessageModel;
 
   @Input()
-  public message$: Observable<MessageModel>;
+  public message1$: Observable<MessageModel>;
 
   @Input()
-  public message1$: Observable<MessageModel>;
+  public message2$: Observable<MessageModel>;
 
   // @Input()
   // public message1$: Observable<MessageModel>;
 
-  public title = 'DEFAULT';
+  public title = 'CHANGE STRATEGY: DEFAULT';
   public counter = 0;
   public subs;
 
@@ -38,12 +38,12 @@ export class ParentDefaultComponent implements OnInit {
     setInterval(() => {
       this.counter++;
     }, 500);
-    this.message1$.subscribe((x) => this.subs = x);
+    this.message2$.subscribe((x) => this.subs = x);
 
 
   }
 
   public setCounter() {
-    this.counter = 1000;
+    this.counter = 1;
   }
 }

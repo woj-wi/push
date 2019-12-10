@@ -1,16 +1,19 @@
-<h2>GRAND</h2>
+<h2>ROOT</h2>
 <div>
-  <button (click)="changeNumber()">CHANGE NUMBER</button>&nbsp;
-  <button (click)="changeObject()">CHANGE OBJECT</button>&nbsp;
-  <button (click)="newObject()">NEW OBJECT</button>&nbsp;
-  <button (click)="sendMessage1()">SEND VIA OBSERVABLE</button>&nbsp;
-  <button (click)="sendMessage2()">SEND VIA OBSERVABLE</button>&nbsp;
+
+  <table cellpadding="5"  cellspacing="1" border="1" width="100%">
+    <tr><td>{{ivalue}}</td><td width="30%"><button (click)="changeNumber()">CHANGE NUMBER</button></td></tr>
+    <tr><td rowspan="2">{{message | json }}</td><td><button (click)="changeObject()">CHANGE OBJECT</button></td></tr>
+    <tr><td><button (click)="newObject()">NEW OBJECT</button></td></tr>
+    <tr><td>{{message1 | json}}</td><td><button (click)="sendMessage1()">SEND VIA OBSERVABLE (async)</button> (stream 1)</td></tr>
+    <tr><td>{{message2 | json }}</td><td><button (click)="sendMessage2()">SEND VIA OBSERVABLE (sunbscribe)</button> (stream 2)</td></tr>
+  </table>
 
 </div>
 <br><br>
 <div class="container">
-  <tx-parent-default [message]="message" [ivalue]="ivalue" [message$]="stream1$" [message1$]="stream2$" class="item"></tx-parent-default>
+  <tx-parent-default [message]="message" [ivalue]="ivalue" [message1$]="stream1$" [message2$]="stream2$" class="item"></tx-parent-default>
   <div>&nbsp;</div>
-  <tx-parent-onpush [message]="message" [ivalue]="ivalue" [message$]="stream1$" [message1$]="stream2$" class="item"></tx-parent-onpush>
+  <tx-parent-onpush [message]="message" [ivalue]="ivalue" [message1$]="stream1$" [message2$]="stream2$" class="item"></tx-parent-onpush>
 
 </div>
