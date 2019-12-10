@@ -1,2 +1,26 @@
-<tx-child>
-</tx-child>
+<h3>{{title}}</h3>
+<div>
+<span>COUNTER:{{counter}}</span>, <button (click)="setCounter()">RESET</button>
+</div>
+<div>
+  <span>OBJECT:{{message | json }}</span>
+</div>
+<div>
+  <span>OBSERVABLE ASYNC:{{message$ | async  | json }}</span>
+</div>
+
+<div>
+  <span>OBSERVABLE SUBSCRIBED:{{subs | json }}</span>
+</div>
+
+
+<div>NUMBER: {{ivalue}}</div>
+
+
+<div class="container">
+  <tx-child [ivalue]="ivalue"   class="item">
+  </tx-child>
+  <tx-child  [ivalue]="ivalue" class="item">
+  </tx-child>
+
+</div>

@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+
+  flex-grow:1;
+
+}
+
+
+h1, h2, h3{
+  text-align: center;
+}

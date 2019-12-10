@@ -1,2 +1,16 @@
-<tx-parent></tx-parent>
+<h2>GRAND</h2>
+<div>
+  <button (click)="changeNumber()">CHANGE NUMBER</button>&nbsp;
+  <button (click)="changeObject()">CHANGE OBJECT</button>&nbsp;
+  <button (click)="newObject()">NEW OBJECT</button>&nbsp;
+  <button (click)="sendMessage1()">SEND VIA OBSERVABLE</button>&nbsp;
+  <button (click)="sendMessage2()">SEND VIA OBSERVABLE</button>&nbsp;
 
+</div>
+<br><br>
+<div class="container">
+  <tx-parent-default [message]="message" [ivalue]="ivalue" [message$]="stream1$" [message1$]="stream2$" class="item"></tx-parent-default>
+  <div>&nbsp;</div>
+  <tx-parent-onpush [message]="message" [ivalue]="ivalue" [message$]="stream1$" [message1$]="stream2$" class="item"></tx-parent-onpush>
+
+</div>
